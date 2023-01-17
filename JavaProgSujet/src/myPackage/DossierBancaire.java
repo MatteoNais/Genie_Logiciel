@@ -3,14 +3,14 @@ package myPackage;
 public class DossierBancaire {
 	
 	//Constructeur
+	private Compte_courant cc;
     public DossierBancaire()
     {
-    	m_solde=0;
+    	cc = new Compte_courant();
     }
 
-    public void deposer(double value) {m_solde+=value;}
-    public double get_solde() {return m_solde;}
+    public void deposer(double value) {cc.add_solde(value);}
+    public double get_solde() {return cc.get_solde();}
     public void remunerer() {}
-	
-    private double m_solde;
+
 }
