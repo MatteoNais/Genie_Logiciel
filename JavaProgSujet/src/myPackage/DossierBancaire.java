@@ -24,5 +24,11 @@ public class DossierBancaire {
     	return total;
     }
     public void remunerer() {compte_e.add_solde(compte_e.get_solde()*0.032);} // méthode permettant de rémunerer le compte épargne.
-
+    
+    public void retirer(double montant) throws Exception
+    {
+    	if(montant > compte_c.get_solde()) throw new Exception("Solde insuffisant");
+    	if(montant <= 0) throw new Exception("Le montant est inférieur à zéro");
+    	else compte_c.retirer(montant);
+    }
 }
